@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+<main role="main">
+<div class="container">
+  <br />
+    <h1 class="text-center">{{ blog.title }}</h3>
+    <p class="text-center">{{ blog.pub_date }}</p>
+    <br /><br />
+    <div class="align-items-center">
+    <img class="img-fluid rounded mx-auto d-block" src="{{ blog.image.url }}" height=60% width=50% />
+    </div>
+    <br>
+    <p>{{ blog.post_sum }}</p>
+    <br />
+    <hr />
+
+</div>
+</main>
+{% endblock %}

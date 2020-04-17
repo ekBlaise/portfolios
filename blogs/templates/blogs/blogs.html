@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<main role="main">
+<div class="container">
+  <h1 class="text-center pt-4">Welcome to Ekwoge Blaise's Blog</h1>
+  <br />
+
+  <h2>Latest Posts</h2>
+  <hr />
+  <br />
+  {% for blog in blogs.all %}
+    <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+    {{ blog.pub_date_pretty }}
+    <br /><br />
+    <img class="img-fluid" src="{{ blog.image.url }}" height=25% width=25% /><br>
+    <p>{{ blog.summary }}<a href="{% url 'detail' blog.id %}">Read More!</a></p>
+    <br />
+    <hr />
+  {% endfor %}
+</div>
+</main>
+{% endblock %}
